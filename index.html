@@ -21,11 +21,11 @@
             line-height: 1.8;
         }
 
-        /* LIVE 실시간 현황판 */
+        /* LIVE 실시간 현황판 - 불투명 배경, 높이 축소 */
         .live-status-bar {
-            background: linear-gradient(90deg, rgba(0, 255, 0, 0.15), rgba(0, 255, 0, 0.08));
+            background-color: #0a0a0a;
             border-bottom: 1px solid rgba(0, 255, 0, 0.5);
-            padding: 1.2rem 1.5rem;
+            padding: 0.7rem 1rem;
             font-family: 'Noto Sans KR', sans-serif;
             position: sticky;
             top: 0;
@@ -36,16 +36,16 @@
         .live-badge {
             display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.4rem;
             font-weight: 700;
-            font-size: 1.1rem;
+            font-size: 0.9rem;
             color: #00ff00;
-            margin-bottom: 0.8rem;
+            margin-bottom: 0.3rem;
         }
 
         .live-dot {
-            width: 10px;
-            height: 10px;
+            width: 8px;
+            height: 8px;
             background-color: #00ff00;
             border-radius: 50%;
             animation: blink 1.2s infinite;
@@ -59,16 +59,16 @@
         .live-info {
             display: flex;
             justify-content: center;
-            gap: 2rem;
+            gap: 1.2rem;
             flex-wrap: wrap;
-            font-size: 0.95rem;
+            font-size: 0.8rem;
             color: #b0b0b0;
         }
 
         .live-info-item {
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.3rem;
         }
 
         .live-info-label {
@@ -81,9 +81,9 @@
         }
 
         .live-time {
-            font-size: 0.85rem;
+            font-size: 0.7rem;
             color: #666;
-            margin-top: 0.5rem;
+            margin-top: 0.2rem;
         }
 
         /* 헤더 및 네비게이션 */
@@ -110,14 +110,13 @@
 
         nav {
             background-color: #1a1a1a;
-            padding: 1rem 1.5rem;
+            padding: 0.8rem 1rem;
             display: flex;
             justify-content: center;
-            gap: 2rem;
+            gap: 1.5rem;
             flex-wrap: wrap;
             border-bottom: 1px solid rgba(212, 175, 55, 0.1);
-            position: sticky;
-            top: 100px;
+            position: relative;
             z-index: 99;
         }
 
@@ -125,7 +124,7 @@
             color: #d4af37;
             text-decoration: none;
             font-weight: 600;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             transition: color 0.3s ease;
         }
 
@@ -163,15 +162,17 @@
 
         .hero-content {
             position: absolute;
-            bottom: 2rem;
-            left: 2rem;
-            right: 2rem;
+            bottom: 0;
+            left: 0;
+            right: 0;
             color: white;
             z-index: 2;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.6));
+            padding: 2rem 1.5rem;
         }
 
         .hero-content h2 {
-            font-size: 2rem;
+            font-size: 1.8rem;
             margin-bottom: 1rem;
             font-weight: 900;
         }
@@ -355,22 +356,26 @@
             bottom: 0;
             left: 0;
             right: 0;
-            background: rgba(0, 0, 0, 0.95);
-            border-top: 1px solid #d4af37;
-            padding: 0.8rem;
+            background: rgba(0, 0, 0, 0.98);
+            border-top: 2px solid #d4af37;
+            padding: 0.6rem;
             z-index: 1000;
-            gap: 0.5rem;
+            gap: 0.4rem;
         }
 
         .mobile-fixed-bar a {
             flex: 1;
-            padding: 0.8rem;
+            padding: 0.75rem;
             text-align: center;
             border-radius: 4px;
             text-decoration: none;
             font-weight: 600;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             transition: all 0.3s ease;
+            min-height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .mobile-fixed-bar .phone-btn {
@@ -412,40 +417,62 @@
             color: #555;
         }
 
-        /* 반응형 */
+        /* 반응형 - 태블릿 */
         @media (max-width: 768px) {
             h1 {
-                font-size: 1.8rem;
+                font-size: 1.6rem;
             }
 
             h2 {
-                font-size: 1.5rem;
+                font-size: 1.3rem;
+            }
+
+            h3 {
+                font-size: 1.1rem;
             }
 
             .hero {
-                height: 250px;
+                height: 300px;
+                margin-bottom: 2rem;
+            }
+
+            .hero-content {
+                padding: 1.5rem;
             }
 
             .hero-content h2 {
                 font-size: 1.3rem;
+                margin-bottom: 0.8rem;
             }
 
             .hero-buttons {
                 flex-direction: column;
+                gap: 0.6rem;
             }
 
             .btn {
                 width: 100%;
+                padding: 0.7rem 1.2rem;
+                font-size: 0.9rem;
             }
 
             nav {
-                gap: 1rem;
-                font-size: 0.85rem;
+                gap: 0.8rem;
+                font-size: 0.8rem;
+                padding: 0.7rem 0.8rem;
+            }
+
+            nav a {
+                padding: 0.3rem 0.5rem;
             }
 
             .live-info {
-                gap: 1rem;
-                font-size: 0.85rem;
+                gap: 0.8rem;
+                font-size: 0.75rem;
+            }
+
+            .live-status-bar {
+                padding: 0.6rem 0.8rem;
             }
 
             .mobile-fixed-bar {
@@ -453,47 +480,157 @@
             }
 
             body {
-                padding-bottom: 80px;
-            }
-
-            .live-status-bar {
-                padding: 1rem;
+                padding-bottom: 75px;
             }
 
             table {
-                font-size: 0.9rem;
+                font-size: 0.85rem;
             }
 
             th, td {
-                padding: 0.8rem;
+                padding: 0.7rem;
+            }
+
+            p {
+                font-size: 0.95rem;
+            }
+
+            .container {
+                padding: 1.2rem 1rem;
+            }
+
+            section {
+                margin-bottom: 2.5rem;
             }
         }
 
+        /* 반응형 - 모바일 */
         @media (max-width: 480px) {
             .container {
-                padding: 1rem;
+                padding: 0.8rem;
             }
 
             h1 {
-                font-size: 1.5rem;
+                font-size: 1.3rem;
             }
 
             h2 {
-                font-size: 1.2rem;
+                font-size: 1.1rem;
+                margin-bottom: 1rem;
+                padding-bottom: 0.8rem;
             }
 
-            .live-info {
+            h3 {
+                font-size: 0.95rem;
+                margin: 1rem 0 0.8rem 0;
+            }
+
+            .hero {
+                height: 250px;
+                margin-bottom: 1.5rem;
+                border-radius: 6px;
+            }
+
+            .hero-content {
+                padding: 1rem;
+            }
+
+            .hero-content h2 {
+                font-size: 1.1rem;
+                margin-bottom: 0.6rem;
+            }
+
+            .hero-buttons {
                 flex-direction: column;
                 gap: 0.5rem;
             }
 
+            .btn {
+                width: 100%;
+                padding: 0.6rem 1rem;
+                font-size: 0.85rem;
+            }
+
+            .live-info {
+                flex-direction: column;
+                gap: 0.2rem;
+                font-size: 0.7rem;
+            }
+
             .live-status-bar {
-                padding: 0.8rem;
+                padding: 0.5rem 0.6rem;
+            }
+
+            .live-badge {
+                font-size: 0.8rem;
+                margin-bottom: 0.2rem;
+            }
+
+            .live-info-item {
+                font-size: 0.7rem;
             }
 
             nav {
-                gap: 0.5rem;
+                gap: 0.4rem;
+                font-size: 0.7rem;
+                padding: 0.5rem 0.6rem;
+            }
+
+            nav a {
+                padding: 0.2rem 0.3rem;
+            }
+
+            .mobile-fixed-bar {
+                display: flex;
+                padding: 0.5rem;
+            }
+
+            .mobile-fixed-bar a {
+                padding: 0.6rem;
                 font-size: 0.75rem;
+                min-height: 42px;
+            }
+
+            body {
+                padding-bottom: 70px;
+            }
+
+            p {
+                font-size: 0.9rem;
+                margin-bottom: 0.8rem;
+            }
+
+            table {
+                font-size: 0.8rem;
+            }
+
+            th, td {
+                padding: 0.6rem;
+            }
+
+            .review-card {
+                padding: 1rem;
+                margin-bottom: 0.8rem;
+            }
+
+            .faq-question {
+                padding: 1rem;
+            }
+
+            .faq-answer {
+                padding: 1rem;
+            }
+
+            section {
+                margin-bottom: 2rem;
+            }
+
+            .image-section {
+                margin: 1.5rem 0;
+            }
+
+            .image-section img {
+                margin-bottom: 1rem;
             }
         }
     </style>
@@ -507,16 +644,16 @@
         </div>
         <div class="live-info">
             <div class="live-info-item">
-                <span class="live-info-label">출근 매니저:</span>
+                <span class="live-info-label">출근:</span>
                 <span class="live-info-value" id="manager-count">25명</span>
             </div>
             <div class="live-info-item">
-                <span class="live-info-label">즉시 선택 가능:</span>
+                <span class="live-info-label">선택:</span>
                 <span class="live-info-value" id="available-count">7명</span>
             </div>
             <div class="live-info-item">
-                <span class="live-info-label">현재 대기:</span>
-                <span class="live-info-value" id="waiting-status">없음 (즉시 입장)</span>
+                <span class="live-info-label">대기:</span>
+                <span class="live-info-value" id="waiting-status">없음</span>
             </div>
         </div>
         <div class="live-time" id="current-time">2026-02-25 10:42</div>
@@ -791,7 +928,7 @@
         function updateLiveStatus() {
             const managerCount = Math.floor(Math.random() * 11) + 20; // 20-30
             const availableCount = Math.floor(Math.random() * 6) + 5; // 5-10
-            const waitingOptions = ['없음 (즉시 입장)', '1팀 대기 중', '2팀 대기 중', '3팀 대기 중'];
+            const waitingOptions = ['없음', '1팀', '2팀', '3팀'];
             const waitingStatus = waitingOptions[Math.floor(Math.random() * waitingOptions.length)];
 
             document.getElementById('manager-count').textContent = managerCount + '명';
