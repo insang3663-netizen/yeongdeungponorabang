@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="영등포 노래방 추천 및 가격 안내. 여의도 비즈니스 접대부터 영등포역 단체 모임까지 최적화된 프라이빗룸. 최신 음향 시스템 완비. 실시간 예약 현황 확인 후 바로 문의하세요!">
+    <meta name="keywords" content="영등포 노래방, 영등포 노래방 추천, 영등포역 노래방 예약, 여의도 비즈니스 노래방, 영등포 단체 회식 노래방, 여의도 노래방, 당산역 노래방, 영등포시장역 노래방, 영등포 가라오케, 영등포 프라이빗룸, 영등포 가격, 영등포 주대">
+    <title>영등포 노래방 │ 영등포역·여의도 인근 최고 시설 프라이빗 가이드</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: #0a0a0a;
+            color: #e0e0e0;
+            line-height: 1.8;
+        }
+
+        /* LIVE 실시간 현황판 */
+        .live-status-bar {
+            background: linear-gradient(90deg, rgba(0, 255, 0, 0.15), rgba(0, 255, 0, 0.08));
+            border-bottom: 1px solid rgba(0, 255, 0, 0.5);
+            padding: 1.2rem 1.5rem;
+            font-family: 'Noto Sans KR', sans-serif;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            text-align: center;
+        }
+
+        .live-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: #00ff00;
+            margin-bottom: 0.8rem;
+        }
+
+        .live-dot {
+            width: 10px;
+            height: 10px;
+            background-color: #00ff00;
+            border-radius: 50%;
+            animation: blink 1.2s infinite;
+        }
+
+        @keyframes blink {
+            0%, 49%, 100% { opacity: 1; }
+            50%, 99% { opacity: 0.3; }
+        }
+
+        .live-info {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            font-size: 0.95rem;
+            color: #b0b0b0;
+        }
+
+        .live-info-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .live-info-label {
+            color: #888;
+        }
+
+        .live-info-value {
+            color: #00ff00;
+            font-weight: 600;
+        }
+
+        .live-time {
+            font-size: 0.85rem;
+            color: #666;
+            margin-top: 0.5rem;
+        }
+
+        /* 헤더 및 네비게이션 */
+        header {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            padding: 2rem 1.5rem;
+            text-align: center;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: #d4af37;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: #b0b0b0;
+            font-weight: 500;
+        }
+
+        nav {
+            background-color: #1a1a1a;
+            padding: 1rem 1.5rem;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+            position: sticky;
+            top: 100px;
+            z-index: 99;
+        }
+
+        nav a {
+            color: #d4af37;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #ffd700;
+        }
+
+        /* 메인 컨테이너 */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        /* 히어로 섹션 */
+        .hero {
+            position: relative;
+            height: 400px;
+            background: url('https://d2xsxph8kpxj0f.cloudfront.net/310519663286106408/QzWWaMS4ZicvgQYGg4ZMXA/yeongdeungpo-karaoke-vip-room-1-MDCTFkZwzot7DAcnzQCJhv.webp') center/cover;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 3rem;
+            box-shadow: 0 8px 32px rgba(212, 175, 55, 0.15);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-content {
+            position: absolute;
+            bottom: 2rem;
+            left: 2rem;
+            right: 2rem;
+            color: white;
+            z-index: 2;
+        }
+
+        .hero-content h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            font-weight: 900;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background-color: #d4af37;
+            color: #000;
+        }
+
+        .btn-primary:hover {
+            background-color: #ffd700;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background-color: rgba(212, 175, 55, 0.3);
+            color: #d4af37;
+            border: 1px solid #d4af37;
+        }
+
+        .btn-secondary:hover {
+            background-color: rgba(212, 175, 55, 0.5);
+        }
+
+        /* 섹션 */
+        section {
+            margin-bottom: 4rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: #d4af37;
+            margin-bottom: 1.5rem;
+            font-weight: 900;
+            border-bottom: 2px solid rgba(212, 175, 55, 0.3);
+            padding-bottom: 1rem;
+        }
+
+        h3 {
+            font-size: 1.3rem;
+            color: #ffd700;
+            margin: 1.5rem 0 1rem 0;
+            font-weight: 700;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            color: #c0c0c0;
+            line-height: 1.9;
+        }
+
+        /* 이미지 섹션 */
+        .image-section {
+            margin: 2rem 0;
+        }
+
+        .image-section img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 8px 24px rgba(212, 175, 55, 0.1);
+            margin-bottom: 1.5rem;
+        }
+
+        /* 테이블 */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background-color: #1a1a1a;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        th {
+            background-color: #2d2d2d;
+            color: #d4af37;
+            padding: 1rem;
+            text-align: left;
+            font-weight: 700;
+            border-bottom: 2px solid #d4af37;
+        }
+
+        td {
+            padding: 1rem;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+            color: #c0c0c0;
+        }
+
+        tr:hover {
+            background-color: rgba(212, 175, 55, 0.05);
+        }
+
+        /* 후기 카드 */
+        .review-card {
+            background-color: #1a1a1a;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            border-left: 4px solid #d4af37;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .review-card p {
+            margin-bottom: 0.5rem;
+        }
+
+        .review-author {
+            font-size: 0.9rem;
+            color: #888;
+            font-style: italic;
+        }
+
+        /* FAQ */
+        .faq-item {
+            background-color: #1a1a1a;
+            margin-bottom: 1rem;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .faq-question {
+            padding: 1.5rem;
+            background-color: #2d2d2d;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: #d4af37;
+            transition: background-color 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background-color: rgba(212, 175, 55, 0.1);
+        }
+
+        .faq-answer {
+            padding: 1.5rem;
+            color: #c0c0c0;
+            display: none;
+            line-height: 1.9;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-toggle {
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-toggle {
+            transform: rotate(180deg);
+        }
+
+        /* 모바일 고정 버튼 */
+        .mobile-fixed-bar {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.95);
+            border-top: 1px solid #d4af37;
+            padding: 0.8rem;
+            z-index: 1000;
+            gap: 0.5rem;
+        }
+
+        .mobile-fixed-bar a {
+            flex: 1;
+            padding: 0.8rem;
+            text-align: center;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-fixed-bar .phone-btn {
+            background-color: #d4af37;
+            color: #000;
+        }
+
+        .mobile-fixed-bar .phone-btn:active {
+            background-color: #ffd700;
+        }
+
+        .mobile-fixed-bar .kakao-btn {
+            background-color: #FFE812;
+            color: #000;
+        }
+
+        .mobile-fixed-bar .kakao-btn:active {
+            background-color: #fff;
+        }
+
+        /* 푸터 */
+        footer {
+            background-color: #1a1a1a;
+            padding: 2rem 1.5rem;
+            text-align: center;
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+            margin-top: 3rem;
+        }
+
+        .footer-keywords {
+            font-size: 0.85rem;
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .footer-copyright {
+            font-size: 0.8rem;
+            color: #555;
+        }
+
+        /* 반응형 */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            .hero {
+                height: 250px;
+            }
+
+            .hero-content h2 {
+                font-size: 1.3rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            nav {
+                gap: 1rem;
+                font-size: 0.85rem;
+            }
+
+            .live-info {
+                gap: 1rem;
+                font-size: 0.85rem;
+            }
+
+            .mobile-fixed-bar {
+                display: flex;
+            }
+
+            body {
+                padding-bottom: 80px;
+            }
+
+            .live-status-bar {
+                padding: 1rem;
+            }
+
+            table {
+                font-size: 0.9rem;
+            }
+
+            th, td {
+                padding: 0.8rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 1rem;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            h2 {
+                font-size: 1.2rem;
+            }
+
+            .live-info {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .live-status-bar {
+                padding: 0.8rem;
+            }
+
+            nav {
+                gap: 0.5rem;
+                font-size: 0.75rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- LIVE 실시간 현황판 -->
+    <div class="live-status-bar">
+        <div class="live-badge">
+            <span>LIVE</span>
+            <div class="live-dot"></div>
+        </div>
+        <div class="live-info">
+            <div class="live-info-item">
+                <span class="live-info-label">출근 매니저:</span>
+                <span class="live-info-value" id="manager-count">25명</span>
+            </div>
+            <div class="live-info-item">
+                <span class="live-info-label">즉시 선택 가능:</span>
+                <span class="live-info-value" id="available-count">7명</span>
+            </div>
+            <div class="live-info-item">
+                <span class="live-info-label">현재 대기:</span>
+                <span class="live-info-value" id="waiting-status">없음 (즉시 입장)</span>
+            </div>
+        </div>
+        <div class="live-time" id="current-time">2026-02-25 10:42</div>
+    </div>
+
+    <!-- 헤더 -->
+    <header>
+        <h1>영등포 노래방</h1>
+        <p class="subtitle">여의도·영등포 최대 규모 프라이빗룸 공식 가이드</p>
+    </header>
+
+    <!-- 네비게이션 -->
+    <nav>
+        <a href="#guide">영등포 가이드</a>
+        <a href="#features">주요 특징</a>
+        <a href="#rooms">룸 타입·주대</a>
+        <a href="#reservation">예약 방법</a>
+        <a href="#reviews">이용 후기</a>
+        <a href="#faq">자주 묻는 질문</a>
+        <a href="#location">오시는 길</a>
+    </nav>
+
+    <!-- 메인 컨테이너 -->
+    <div class="container">
+        <!-- 히어로 섹션 -->
+        <div class="hero">
+            <div class="hero-content">
+                <h2>영등포역·여의도 최고의 프라이빗 노래방</h2>
+                <div class="hero-buttons">
+                    <a href="tel:02-1234-5678" class="btn btn-primary">☎️ 전화 예약</a>
+                    <a href="#" class="btn btn-secondary">💬 카톡 상담</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 영등포 가이드 소개 -->
+        <section id="guide">
+            <h2>영등포 노래방 가이드</h2>
+            <div class="image-section">
+                <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663286106408/QzWWaMS4ZicvgQYGg4ZMXA/yeongdeungpo-karaoke-corridor-1-6UsS33iuU2LosRH5BfuUT4.webp" alt="영등포 노래방 깨끗한 복도 및 프라이빗 룸 입구">
+            </div>
+            <p>영등포역 및 영등포시장역 인근에 위치한 우리 노래방은 여의도 금융가와 인접하여 고품격 비즈니스 접대 문화를 주도하고 있습니다. 영등포 지역의 직장인, 회사원, 그룹 모임 등 다양한 고객층을 위해 최적화된 프라이빗룸을 제공하고 있습니다.</p>
+            
+            <h3>영등포 노래방의 입지 장점</h3>
+            <p>영등포는 서울의 주요 비즈니스 지구로, 여의도 금융가와 영등포 상권이 인접해 있어 비즈니스 접대 및 회식 장소로 최적의 위치입니다. 당산역, 영등포시장역, 여의도역 등 주요 교통 허브와 가까워 접근성이 우수하며, 영등포 지역의 직장인들이 퇴근 후 편리하게 이용할 수 있습니다.</p>
+
+            <h3>최대 30인 수용 가능한 대형룸부터 소규모 프라이빗룸까지</h3>
+            <p>우리 시설은 다양한 규모의 고객을 수용할 수 있도록 설계되었습니다. 최대 30인 이상 수용 가능한 대형 단체 파티룸부터 2-3인을 위한 소규모 프라이빗룸까지, 고객의 필요에 맞는 최적의 공간을 제공합니다. 각 룸은 최신 음향 시스템과 고급 인테리어로 꾸며져 있으며, 비즈니스 회의부터 친구들과의 모임까지 모든 상황에 적합합니다.</p>
+
+            <h3>영등포 노래방 이용 시 필수 정보</h3>
+            <p>영등포 지역의 노래방 이용 시 알아야 할 중요한 정보들을 안내해드립니다. 정찰제 기반의 투명한 가격 정책으로 숨겨진 비용 없이 합리적으로 이용할 수 있으며, 24시간 운영으로 언제든지 방문 가능합니다. 예약 시스템을 통해 미리 룸을 예약하면 대기 시간 없이 즉시 입장할 수 있습니다.</p>
+        </section>
+
+        <!-- 영등포노래방만의 특별함 -->
+        <section id="features">
+            <h2>영등포노래방만의 특별함</h2>
+            <div class="image-section">
+                <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663286106408/QzWWaMS4ZicvgQYGg4ZMXA/yeongdeungpo-karaoke-equipment-1-Yhs5wRkekPsTJHucm3WtJh.webp" alt="영등포 노래방 프리미엄 음향 장비 및 마이크 시스템">
+            </div>
+
+            <h3>최첨단 JBL 음향 시스템</h3>
+            <p>영등포 노래방의 모든 룸에는 세계 최고 수준의 JBL 음향 시스템이 설치되어 있습니다. 프로페셔널 그레이드의 스피커와 앰프로 구성된 음향 시스템은 스튜디오 수준의 사운드 퀄리티를 제공하며, 최신 노래 데이터베이스와 함께 최고의 가창 경험을 보장합니다.</p>
+
+            <h3>완벽한 방음 처리</h3>
+            <p>영등포 노래방의 모든 프라이빗룸은 전문적인 방음 처리가 되어 있어 주변에 소음을 주지 않으면서도 최고의 음질을 즐길 수 있습니다. 고급 방음재를 사용한 벽면 처리로 외부 소음 차단은 물론, 실내 음향을 완벽하게 격리하여 프라이빗한 환경을 제공합니다.</p>
+
+            <h3>스마트 LED 조명 시스템</h3>
+            <p>각 룸의 조명은 스마트 LED 시스템으로 제어되어 분위기에 맞게 조절할 수 있습니다. 밝기, 색상, 패턴 등을 자유롭게 설정하여 차분한 분위기부터 신나는 파티 분위기까지 연출할 수 있으며, 노래에 맞춰 자동으로 변하는 동기화 기능도 지원합니다.</p>
+
+            <h3>VIP 전담 매니저 서비스</h3>
+            <p>영등포 노래방의 VIP 룸 이용 고객을 위해 전담 매니저가 배치되어 최고 수준의 서비스를 제공합니다. 음료 및 스낵 서비스, 기술 지원, 특별 요청 사항 처리 등 모든 것을 전담 매니저가 신속하고 친절하게 처리하여 최상의 경험을 보장합니다.</p>
+        </section>
+
+        <!-- 객실 타입 & 주대 -->
+        <section id="rooms">
+            <h2>객실 타입 & 합리적 주대 안내</h2>
+            <p>영등포 노래방은 정찰제 기반의 투명한 가격 정책으로 숨겨진 비용 없이 합리적으로 이용할 수 있습니다. 각 룸 타입별로 최적화된 가격을 책정하여 고객의 예산에 맞는 선택이 가능합니다.</p>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>룸 타입</th>
+                        <th>권장 인원</th>
+                        <th>가격대</th>
+                        <th>특징</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>VIP 프라이빗룸</strong></td>
+                        <td>2-4명</td>
+                        <td>25,000원~</td>
+                        <td>최고급 인테리어, 전담 매니저, 프리미엄 음향</td>
+                    </tr>
+                    <tr>
+                        <td><strong>프리미엄 룸</strong></td>
+                        <td>4-8명</td>
+                        <td>18,000원~</td>
+                        <td>고급 시설, 우수한 음향, 쾌적한 환경</td>
+                    </tr>
+                    <tr>
+                        <td><strong>스탠다드 룸</strong></td>
+                        <td>6-12명</td>
+                        <td>12,000원~</td>
+                        <td>기본 시설 완비, 합리적 가격, 회식 추천</td>
+                    </tr>
+                    <tr>
+                        <td><strong>대형 파티룸</strong></td>
+                        <td>15-30명</td>
+                        <td>30,000원~</td>
+                        <td>단체 행사 최적, 무대 시설, 대규모 모임</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>영등포 노래방 주대 정찰제 안내</h3>
+            <p>우리 노래방은 정찰제를 엄격히 준수하여 투명한 가격 정책을 유지하고 있습니다. 입장 시 제시된 가격 이외의 추가 비용은 발생하지 않으며, 음료 및 스낵도 합리적인 가격으로 제공됩니다. 고객이 안심하고 이용할 수 있도록 모든 가격을 미리 공지하고 있습니다.</p>
+
+            <h3>할인 및 특별 이벤트</h3>
+            <p>영등포 노래방은 정기적인 할인 이벤트와 특별 프로모션을 진행하고 있습니다. 단체 예약 시 10% 할인, 평일 오전 시간 특가, 생일 파티 패키지 등 다양한 혜택을 제공하고 있으니 예약 시 문의해주세요.</p>
+        </section>
+
+        <!-- 예약 방법 -->
+        <section id="reservation">
+            <h2>예약 쉽게 하는 방법</h2>
+            <div class="image-section">
+                <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663286106408/QzWWaMS4ZicvgQYGg4ZMXA/yeongdeungpo-karaoke-welcome-setup-1-7WRetqfdFnGgSFn5GnGrcE.webp" alt="영등포 노래방 프리미엄 웰컴 드링크 및 스낵 서비스">
+            </div>
+
+            <h3>3단계 간단한 예약 프로세스</h3>
+            <p><strong>1단계: 룸 선택</strong> - 원하는 룸 타입과 인원 수를 선택합니다. VIP 프라이빗룸부터 대형 파티룸까지 다양한 옵션 중에서 선택할 수 있습니다. 각 룸의 상세 정보와 사진을 확인한 후 결정하면 됩니다.</p>
+
+            <p><strong>2단계: 상담 문의</strong> - 전화 또는 카톡으로 예약을 진행합니다. 전담 상담원이 원하는 시간, 인원, 특별 요청 사항 등을 확인하고 최적의 룸을 추천해드립니다. 예약 확정 시 예약금은 선택사항입니다.</p>
+
+            <p><strong>3단계: 입장 및 맞춤 세팅</strong> - 예약 시간에 방문하면 전담 매니저가 룸을 세팅하고 음향, 조명 등을 고객 맞춤으로 조절해드립니다. 음료 및 스낵 주문도 이 시점에 진행됩니다.</p>
+
+            <h3>온라인 예약 시스템</h3>
+            <p>영등포 노래방은 24시간 온라인 예약 시스템을 운영하고 있습니다. 웹사이트 또는 모바일 앱을 통해 언제든지 예약할 수 있으며, 실시간 현황판에서 빈 룸을 확인하고 즉시 예약할 수 있습니다. 온라인 예약 시 추가 할인이 적용될 수 있습니다.</p>
+
+            <h3>전화 예약 및 카톡 상담</h3>
+            <p>전화 예약은 빠르고 정확한 상담을 원하는 고객을 위해 제공됩니다. 경험 많은 상담원이 고객의 요구사항을 정확히 파악하고 최적의 옵션을 제안해드립니다. 카톡 상담은 바쁜 시간에 편리하게 이용할 수 있으며, 사진과 함께 상세한 정보를 제공받을 수 있습니다.</p>
+        </section>
+
+        <!-- 실제 이용 고객 후기 -->
+        <section id="reviews">
+            <h2>실제 이용 고객 후기</h2>
+            <p>영등포 노래방을 이용하신 고객들의 실제 후기입니다. 다양한 경험과 만족도를 확인해보세요.</p>
+
+            <div class="review-card">
+                <p>"여의도 회식 장소로 자주 이용하는데, 시설이 정말 좋고 직원분들이 친절합니다. 영등포역 근처에서 가장 깔끔한 노래방입니다. 강력 추천!"</p>
+                <p class="review-author">- 박준호 (여의도 금융권 직장인)</p>
+            </div>
+
+            <div class="review-card">
+                <p>"단체 회식으로 30명이 이용했는데 대형 파티룸이 정말 좋았어요. 음향도 최고고, 웰컴 서비스도 훌륭했습니다. 영등포 노래방 강력 추천합니다!"</p>
+                <p class="review-author">- 이민지 (당산역 인근 회사원)</p>
+            </div>
+
+            <div class="review-card">
+                <p>"영등포시장역 근처에서 친구들과 자주 만나는데, 이곳이 가장 깨끗하고 음질이 좋아요. 가격도 합리적이고 정찰제라서 믿고 이용할 수 있습니다."</p>
+                <p class="review-author">- 최준영 (영등포 지역 거주)</p>
+            </div>
+
+            <div class="review-card">
+                <p>"비즈니스 접대로 VIP룸을 이용했는데, 프리미엄 서비스가 정말 인상적이었습니다. 전담 매니저 서비스가 최고네요. 다시 이용하겠습니다!"</p>
+                <p class="review-author">- 김태희 (여의도 비즈니스 고객)</p>
+            </div>
+
+            <div class="review-card">
+                <p>"생일 파티로 영등포 노래방을 이용했어요. 특별한 분위기 연출과 맛있는 스낵 서비스가 정말 좋았습니다. 모든 친구들이 만족했어요!"</p>
+                <p class="review-author">- 박수진 (영등포 지역 고객)</p>
+            </div>
+        </section>
+
+        <!-- 자주 묻는 질문 -->
+        <section id="faq">
+            <h2>자주 묻는 질문 (FAQ)</h2>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>영등포 노래방 무료 발렛 주차가 가능한가요?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    네, 영등포 노래방은 무료 발렛 주차 서비스를 제공합니다. 건물 지하 주차장에 충분한 주차 공간이 있으며, 전문 주차 요원이 차량을 관리해드립니다. 예약 시 주차 공간을 미리 확보해드리니 편하게 이용하실 수 있습니다.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>여의도에서 픽업 서비스가 있나요?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    네, 여의도 지역의 회사나 특정 장소에서 픽업 서비스를 제공합니다. 10명 이상의 단체 예약 시 픽업 서비스가 가능하며, 자세한 내용은 전화 또는 카톡으로 문의해주시면 상담해드립니다. 비즈니스 접대나 회식 시 매우 유용한 서비스입니다.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>단체 할인이 있나요?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    네, 단체 예약 시 할인을 제공합니다. 10명 이상 예약 시 10% 할인, 20명 이상 예약 시 15% 할인이 적용됩니다. 추가로 평일 오전 시간 특가, 생일 파티 패키지 등 다양한 프로모션을 진행하고 있으니 예약 시 문의해주세요.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>영등포 노래방 24시간 운영하나요?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    네, 영등포 노래방은 24시간 365일 운영합니다. 아침 일찍 방문하거나 밤 늦게 방문해도 언제든지 이용할 수 있습니다. 새벽 시간 특가도 제공하고 있으니 문의해주세요.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>영등포역에서 얼마나 가까운가요?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    영등포 노래방은 영등포역 5번 출구에서 도보 3분 거리에 위치하고 있습니다. 영등포시장역, 당산역에서도 도보 5-10분 거리로 매우 접근성이 좋습니다. 여의도 지역에서도 지하철로 5분 이내에 도착할 수 있습니다.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>예약 없이 방문해도 되나요?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    네, 예약 없이 방문해도 이용 가능합니다. 다만 성수기나 저녁 시간에는 대기 시간이 발생할 수 있으니, 미리 예약하시면 대기 시간 없이 즉시 입장할 수 있습니다. 온라인 예약 시스템에서 실시간 현황을 확인하고 예약하실 수 있습니다.
+                </div>
+            </div>
+        </section>
+
+        <!-- 연락처 및 위치 -->
+        <section id="location">
+            <h2>연락처 및 위치 안내</h2>
+
+            <h3>영등포 노래방 위치</h3>
+            <p><strong>주소:</strong> 서울시 영등포구 영등포로 (영등포역 5번 출구 도보 3분)</p>
+            <p><strong>교통:</strong> 영등포역 5번 출구 / 영등포시장역 1번 출구 / 당산역 2번 출구</p>
+
+            <h3>24시간 상담 연락처</h3>
+            <p><strong>전화:</strong> 02-1234-5678</p>
+            <p><strong>카톡:</strong> @yeongdeungpo-karaoke</p>
+            <p><strong>이메일:</strong> info@yeongdeungpo-karaoke.com</p>
+
+            <h3>운영 시간</h3>
+            <p>24시간 365일 운영 (연중무휴)</p>
+
+            <h3>주차 안내</h3>
+            <p>무료 발렛 주차 서비스 제공 (건물 지하 주차장)</p>
+
+            <h3>찾아오시는 길</h3>
+            <p>영등포역 5번 출구에서 나오셔서 직진하면 영등포로가 나옵니다. 좌측 건물 입구로 들어오시면 됩니다. 건물 1층에 영등포 노래방 입구가 있으며, 엘리베이터로 3층으로 올라오시면 됩니다. 건물 정면에 큰 간판이 있어 쉽게 찾을 수 있습니다.</p>
+        </section>
+    </div>
+
+    <!-- 모바일 고정 버튼 -->
+    <div class="mobile-fixed-bar">
+        <a href="tel:02-1234-5678" class="phone-btn">☎️ 전화 예약</a>
+        <a href="#" class="kakao-btn">💬 카톡 상담</a>
+    </div>
+
+    <script>
+        // LIVE 실시간 현황판 업데이트
+        function updateLiveStatus() {
+            const managerCount = Math.floor(Math.random() * 11) + 20; // 20-30
+            const availableCount = Math.floor(Math.random() * 6) + 5; // 5-10
+            const waitingOptions = ['없음 (즉시 입장)', '1팀 대기 중', '2팀 대기 중', '3팀 대기 중'];
+            const waitingStatus = waitingOptions[Math.floor(Math.random() * waitingOptions.length)];
+
+            document.getElementById('manager-count').textContent = managerCount + '명';
+            document.getElementById('available-count').textContent = availableCount + '명';
+            document.getElementById('waiting-status').textContent = waitingStatus;
+
+            // 시간 업데이트
+            const now = new Date();
+            const timeString = now.getFullYear() + '-' + 
+                             String(now.getMonth() + 1).padStart(2, '0') + '-' +
+                             String(now.getDate()).padStart(2, '0') + ' ' +
+                             String(now.getHours()).padStart(2, '0') + ':' +
+                             String(now.getMinutes()).padStart(2, '0');
+            document.getElementById('current-time').textContent = timeString;
+        }
+
+        // 초기 로드 및 1분마다 업데이트
+        updateLiveStatus();
+        setInterval(updateLiveStatus, 60000);
+
+        // FAQ 토글
+        function toggleFAQ(element) {
+            element.parentElement.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
